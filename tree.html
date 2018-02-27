@@ -402,41 +402,22 @@
 
 
 
-
+for(var j=0; j<flare.children.length; j++) {
   //children
-  jQuery("#flare").append("<div id=analytics>-analytics</div>")
-
+  jQuery("#flare").append("<div id='"+ flare.children[j].name+"'>-"+  flare.children[j].name +"</div>")
 
 
   //grandchildren
-  for(var i=0;i<flare.children[0].children.length; i++){
+  for (var i = 0; i < flare.children[j].children.length; i++) {
 
-    console.log(flare.children[0].children[i])
-
-
-      jQuery("#analytics").append("<div id='" + flare.children[0].children[i].name+"'>--" + flare.children[0].children[i].name +"</div>")
-
-  }
+    console.log(flare.children[j].children[i])
 
 
-
-
-
-
-
-
-  jQuery("#flare").append("<div id=animate>-animate</div>")
-
-
-  for(var i=0;i<flare.children[1].children.length; i++){
-
-    console.log(flare.children[1].children[i])
-
-
-    jQuery("#animate").append("<div id='"+ flare.children[1].children[i].name+"'>--" + flare.children[1].children[i].name +"</div>")
+    jQuery("#"+ flare.children[j].name).append("<div id='" + flare.children[j].children[i].name + "'>--" + flare.children[j].children[i].name + "</div>")
 
   }
 
+}
 
 
 
@@ -444,20 +425,6 @@
 
 
 
-
-
-
-  jQuery("#flare").append("<div id=data>-data</div>")
-
-
-  for(var i=0;i<flare.children[2].children.length; i++){
-
-    console.log(flare.children[2].children[i])
-
-
-    jQuery("#data").append("<div id='"+ flare.children[2].children[i].name+"'>--" + flare.children[2].children[i].name +"</div>")
-
-  }
 
 
 </script>
