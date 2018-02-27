@@ -415,6 +415,22 @@ for(var j=0; j<flare.children.length; j++) {
 
     jQuery("#"+ flare.children[j].name).append("<div id='" + flare.children[j].children[i].name + "'>--" + flare.children[j].children[i].name + "</div>")
 
+
+
+
+
+    for (var k = 0; k < flare.children[j].children[i].children.length; k++) {
+
+      console.log(flare.children[j].children[i].children[k])
+
+
+      jQuery("#"+ flare.children[j].children[i].name).append("<div id='" + flare.children[j].children[i].children[k].name + "'>---" + flare.children[j].children[i].children[k].name + "</div>")
+
+    }
+
+
+
+
   }
 
 }
