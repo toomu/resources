@@ -1,6 +1,9 @@
 
 <body>
 
+<div id="tree1"></div>
+
+<div id="tree2"></div>
 
 
 
@@ -390,51 +393,62 @@
     ]
   };
 
+//
+//  jQuery("#tree1").append("<div id=flare>flare</div>");
+//
+//
+//  if(flare.children){
+//    for(var j=0; j<flare.children.length; j++) {
+//      //children
+//      jQuery("#flare").append("<div id='"+ flare.children[j].name+"'>-"+  flare.children[j].name +"</div>")
+//
+//
+//      //grandchildren
+//      if(flare.children[j].children){
+//        for (var i = 0; i < flare.children[j].children.length; i++) {
+//
+//          console.log(flare.children[j].children[i])
+//
+//
+//          jQuery("#"+ flare.children[j].name).append("<div id='" + flare.children[j].children[i].name + "'>--" + flare.children[j].children[i].name + "</div>")
+//
+//
+//
+//
+//          if(flare.children[j].children[i].children) {
+//
+//            for (var k = 0; k < flare.children[j].children[i].children.length; k++) {
+//
+//              console.log(flare.children[j].children[i].children[k])
+//
+//
+//              jQuery("#" + flare.children[j].children[i].name).append("<div id='" + flare.children[j].children[i].children[k].name + "'>---" + flare.children[j].children[i].children[k].name + "</div>")
+//
+//            }
+//          }
+//
+//
+//
+//        }
+//
+//      }
+//
+//    }
+//
+//  }
+//
 
-  jQuery("body").append("<div id=flare>flare</div>");
+
+  function buildnode(node){
+
+    jQuery("#tree2").append("<div id='"+ node.name+"'>"+ node.name+"</div>");
 
 
+    if(node.children){
+      for(var j=0; j<node.children.length; j++) {
+        //children
+        jQuery("#"+node.name).append("<div id='"+ node.children[j].name+"'>-"+  node.children[j].name +"</div>")
 
-
-
-
-
-
-
-
-  if(flare.children){
-    for(var j=0; j<flare.children.length; j++) {
-      //children
-      jQuery("#flare").append("<div id='"+ flare.children[j].name+"'>-"+  flare.children[j].name +"</div>")
-
-
-      //grandchildren
-      if(flare.children[j].children){
-        for (var i = 0; i < flare.children[j].children.length; i++) {
-
-          console.log(flare.children[j].children[i])
-
-
-          jQuery("#"+ flare.children[j].name).append("<div id='" + flare.children[j].children[i].name + "'>--" + flare.children[j].children[i].name + "</div>")
-
-
-
-
-          if(flare.children[j].children[i].children) {
-
-            for (var k = 0; k < flare.children[j].children[i].children.length; k++) {
-
-              console.log(flare.children[j].children[i].children[k])
-
-
-              jQuery("#" + flare.children[j].children[i].name).append("<div id='" + flare.children[j].children[i].children[k].name + "'>---" + flare.children[j].children[i].children[k].name + "</div>")
-
-            }
-          }
-
-
-
-        }
 
       }
 
@@ -443,10 +457,7 @@
   }
 
 
-
-
-
-
+    buildnode(flare);
 
 
 
