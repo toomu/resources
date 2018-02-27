@@ -439,22 +439,27 @@
 //
 
 
-  function buildnode(node, name){
 
+
+  function buildnode(node, depth, name){
+
+   depth+="-"
+
+    console.log(name)
     if(!name){
       jQuery("#tree2").append("<div id='"+ node.name+"'>"+ node.name+"</div>");
     }else{
-      jQuery("#"+name).append("<div id='"+ node.name+"'>"+ node.name+"</div>");
+      jQuery("#"+name).append("<div id='"+ node.name+"'>"+ depth+ node.name+"</div>");
     }
 
 
     if(node.children){
       for(var j=0; j<node.children.length; j++) {
         //children
-        jQuery("#"+node.name).append("<div id='"+ node.children[j].name+"'>-"+  node.children[j].name +"</div>")
+        jQuery("#"+node.name).append("<div id='"+ node.children[j].name+"'>"+ depth +  node.children[j].name +"</div>")
 
 
-        buildnode(node.children[j], node.name);
+        buildnode(node.children[j], depth, node.name);
 
 
       }
@@ -464,7 +469,7 @@
   }
 
 
-    buildnode(flare);
+    buildnode(flare, "" );
 
 
 
