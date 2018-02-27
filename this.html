@@ -1,0 +1,151 @@
+<script>
+
+  //
+  //	// Now I try
+   	var x ="x" //
+   	console.log(x)
+   	console.log(window.x);
+   	console.log(this.x);
+  // //
+  // //	// as expected
+  // //
+  // //
+   	function y(){  //enter function
+   		console.log(this.x);
+   		console.log(this.a);
+   //      return 1
+   	}
+  ////
+  //
+  	y();
+  //
+  //
+  //
+  //
+  	var z = { a:"a"}
+  	z.f = y
+  	console.log(z);
+  //
+  //    //z={a:"a", f:function(){}}
+  //
+  	z.f();
+  ////
+
+  //
+  //
+  	function b(){
+  		console.log(this.x);
+  		console.log(this.d);
+  		function c(){
+  			console.log(this.x);
+  			console.log(this.d);
+  		}
+  		c();
+  	}
+  //
+  //
+  //
+  ////
+  	b();
+  	var e = { d:"d", x:"1"}
+  	e.f=b
+  	e.f();
+  ////
+  ////
+  ////
+  	var g = {a:"a"}
+  ////
+  	g.i = y
+  ////
+  	g.i();
+  ////
+  	var j = g.i
+  ////
+  	j();
+  //
+  	g.i();
+  //
+      var that = this
+
+  ////
+  	//var g = {a:"a"}
+  	g.k = function(){
+  		console.log(this)
+         var that = this
+
+  		function l(){
+  			console.log(this);
+  			console.log(that);
+
+//  			console.log(this.that)
+  		}
+  		 l= l.bind(this)
+  		l();
+  	}
+  ////
+  //
+//      g.k = g.k.bind(window)
+  	g.k();
+  //
+  //
+  //
+  	var w = {a1:"a1"}
+  //
+  	w.k = g.k;
+  //
+//  	w.k = g.k.bind(g);
+  //
+  	w.k();
+  //
+  ////
+  ////
+  ////	//applying in our react component
+  ////
+  ////
+  //
+  	g.k.call(window, 1,2)
+
+  	g.k.apply(window)
+  ////
+      var l={l:"l", }
+  	g.k.call(l)
+  //
+  //
+      g.k(1,2)
+      g.k.call(window,  1,2)
+      g.k.apply(window, [1,2])
+  //
+  ////
+  ////
+  ////
+  	g.m=function(n,ff){
+  		console.log(this);
+  		console.log(n);
+  		console.log(ff)
+  	}
+  ////
+  	g.m(10000)
+  ////
+  	g.m.call({p:"p"}, 100,200)
+  ////
+  	g.m.apply({q:"q"}, [1000,200])
+  ////
+  ////
+  ////
+  ////
+  ////
+  ////
+  ////	function Car(){
+  ////		this.noofwheels=4;
+  ////	}
+  ////
+  ////	var t = new Car();
+  ////	var u = Car();
+  ////
+  ////	console.log(t,u);
+  ////
+  ////
+  //
+  //
+
+</script>

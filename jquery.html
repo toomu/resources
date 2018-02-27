@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="1">
+1
+</div>
+
+<!--<form id="xyz" method="get" >-->
+
+<!--wtf-->
+<!--<input name="x" id="x" type="password"/>-->
+
+<!--<input type="checkbox" name="vehicle" value="Bike" id="ui">I have a bike<br>-->
+
+
+<!--<input type="submit" id="wtf" value="submit"/>-->
+
+
+
+<!--</form>-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+
+<script>
+
+console.log(jQuery);
+
+
+
+jQuery.ajax({url: "./x.json"}).done(function( data ) {
+      console.log( data );
+
+      var json = data
+        json.momoa = "1000"
+
+
+    jQuery("#kamal").text(JSON.stringify(json));
+
+
+
+
+
+  });
+
+</script>
+</body>
+</html>
