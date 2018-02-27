@@ -4,7 +4,6 @@
 
 
 
-</body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script>
@@ -395,14 +394,33 @@
   jQuery("body").append("<div id=1>flare</div>");
   jQuery("#1").append("<div id=2>-analytics</div>")
 
-  jQuery("#2").append("<div id=4>--cluster</div>")
-  jQuery("#2").append("<div id=5>--graph</div>")
-  jQuery("#2").append("<div id=6>--optimization</div>")
+//  jQuery("#2").append("<div id=4>--cluster</div>")
+//  jQuery("#2").append("<div id=5>--graph</div>")
+//  jQuery("#2").append("<div id=6>--optimization</div>")
+
+
+
+  for(var i=0;i<flare.children[0].children.length; i++){
+
+    console.log(flare.children[0].children[i])
+
+
+      jQuery("#2").append("<div >--" + flare.children[0].children[i].name +"</div>")
+
+  }
 
   jQuery("#1").append("<div id=3>-animate</div>")
 
 
+  for(var i=0;i<flare.children[1].children.length; i++){
 
+    console.log(flare.children[1].children[i])
+
+
+    jQuery("#3").append("<div >--" + flare.children[1].children[i].name +"</div>")
+
+  }
 
 
 </script>
+</body>
