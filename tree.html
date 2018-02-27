@@ -402,38 +402,45 @@
 
 
 
-for(var j=0; j<flare.children.length; j++) {
-  //children
-  jQuery("#flare").append("<div id='"+ flare.children[j].name+"'>-"+  flare.children[j].name +"</div>")
+  if(flare.children){
+    for(var j=0; j<flare.children.length; j++) {
+      //children
+      jQuery("#flare").append("<div id='"+ flare.children[j].name+"'>-"+  flare.children[j].name +"</div>")
 
 
-  //grandchildren
-  for (var i = 0; i < flare.children[j].children.length; i++) {
+      //grandchildren
+      if(flare.children[j].children){
+        for (var i = 0; i < flare.children[j].children.length; i++) {
 
-    console.log(flare.children[j].children[i])
-
-
-    jQuery("#"+ flare.children[j].name).append("<div id='" + flare.children[j].children[i].name + "'>--" + flare.children[j].children[i].name + "</div>")
+          console.log(flare.children[j].children[i])
 
 
+          jQuery("#"+ flare.children[j].name).append("<div id='" + flare.children[j].children[i].name + "'>--" + flare.children[j].children[i].name + "</div>")
 
 
 
-    for (var k = 0; k < flare.children[j].children[i].children.length; k++) {
 
-      console.log(flare.children[j].children[i].children[k])
+          if(flare.children[j].children[i].children) {
+
+            for (var k = 0; k < flare.children[j].children[i].children.length; k++) {
+
+              console.log(flare.children[j].children[i].children[k])
 
 
-      jQuery("#"+ flare.children[j].children[i].name).append("<div id='" + flare.children[j].children[i].children[k].name + "'>---" + flare.children[j].children[i].children[k].name + "</div>")
+              jQuery("#" + flare.children[j].children[i].name).append("<div id='" + flare.children[j].children[i].children[k].name + "'>---" + flare.children[j].children[i].children[k].name + "</div>")
+
+            }
+          }
+
+
+
+        }
+
+      }
 
     }
 
-
-
-
   }
-
-}
 
 
 
